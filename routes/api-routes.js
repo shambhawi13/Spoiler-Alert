@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
     // create user
     app.post("/api/user", function(req, res) {
-        db.User.create(req.body).then(function(dbUser) {
+        db.Users.create(req.body).then(function(dbUser) {
           res.json(dbUser);
         });
       });
@@ -12,7 +12,7 @@ module.exports = function(app) {
     app.get("/api/user/:id", function(req, res) {
       let idParam = req.params.id;
       if(idParam){
-        db.User.findAll({
+        db.Users.findAll({
             where: {
                 id : idParam
             }
@@ -24,14 +24,14 @@ module.exports = function(app) {
 
     // create item table 
     app.post("/api/item", function(req, res) {
-        db.Refrigerator.create(req.body).then(function(dbItem) {
+        db.Refrigerator_items.create(req.body).then(function(dbItem) {
           //res.json(dbItem);
             if(dbItem.dataValues){
                 //get value of category
                 //to test
                 let itemName = dbItem.dataValues.category;
                 //get values from category table and check it item exist there or not
-                db.Category.findAll({
+                db.Categories.findAll({
                     where : {
                         name = itemName
                     }
@@ -48,17 +48,17 @@ module.exports = function(app) {
         });
       });
 
-    // get all items in refrigerator
+    // get all items in Refrigerator_items
     app.get("/api/items", function(req, res) {
         // 1. Add a join to include all of each Author's Posts
-        db.Refrigerator.findAll({}).then(function(dbItem) {
+        db.Refrigerator_items.findAll({}).then(function(dbItem) {
           res.json(dbItem);
         });
       });
   
     // update item with particular id
     app.put("/api/item", function(req, res) {
-        db.Refrigerator.update(
+        db.Refrigerator_items.update(
           req.body,
           {
             where: {
@@ -69,9 +69,9 @@ module.exports = function(app) {
         });
       });
     
-    //delete an item from refrigerator
+    //delete an item from Refrigerator_items
     app.delete("/api/item/:id", function(req, res) {
-      db.Refrigerator.destroy({
+      db.Refrigerator_items.destroy({
         where: {
           id: req.params.id
         }
