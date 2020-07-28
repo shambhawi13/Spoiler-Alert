@@ -12,22 +12,22 @@ module.exports = function(app) {
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
-  // index route loads view.html
+  // index route loads login/signup page
   app.get("/", function(req, res) {
     //res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
 
-  // cms route loads cms.html
+  // loads dashboard page withlist of items available in refrigerator
   app.get("/dashboard", function(req, res) {
     
   });
 
-  // blog route loads blog.html
+  // shows list of alerts
   app.get("/notification", function(req, res) {
     
   });
 
-  // authors route loads author-manager.html
+  // shows list of user saves recipes
   app.get("/recipes", function(req, res) {
     
   });
