@@ -1,9 +1,10 @@
-var db = require("../models");
+// var db = require("../models");
 
-module.exports = function(app) {
+ module.exports = function(app) {
     // create user
     app.post("/api/user", function(req, res) {
         db.Users.create(req.body).then(function(dbUser) {
+            console.log(dbUser);
           res.json(dbUser);
         });
       });
@@ -25,26 +26,15 @@ module.exports = function(app) {
     // create item table 
     app.post("/api/item", function(req, res) {
         db.Refrigerator_items.create(req.body).then(function(dbItem) {
-          //res.json(dbItem);
-            if(dbItem.dataValues){
-                //get value of category
-                //to test
-                let itemName = dbItem.dataValues.category;
-                //get values from category table and check it item exist there or not
-                db.Categories.findAll({
-                    where : {
-                        name = itemName
-                    }
-                }).then(function(categorySelected){
-                    if(categorySelected){
-                        //if category is found, dont create new one.
-                    }
-                    else{
-                        // if category not found, create a new category
-                        //render the item page.
-                    }
-                })
-            }
+          res.json(dbItem);
+        });
+      });
+
+    // create categories
+    app.post("/api/categories", function(req, res) {
+        db.Categories.create(req.body).then(function(dbUser) {
+            console.log(dbUser);
+          res.json(dbUser);
         });
       });
 
@@ -52,6 +42,14 @@ module.exports = function(app) {
     app.get("/api/items", function(req, res) {
         // 1. Add a join to include all of each Author's Posts
         db.Refrigerator_items.findAll({}).then(function(dbItem) {
+          res.json(dbItem);
+        });
+      });
+
+    // get all categories from Categories table
+    app.get("/api/categories", function(req, res) {
+        // 1. Add a join to include all of each Author's Posts
+        db.Categories.findAll({}).then(function(dbItem) {
           res.json(dbItem);
         });
       });
@@ -80,4 +78,4 @@ module.exports = function(app) {
       });
     });
   
-  };
+   };
