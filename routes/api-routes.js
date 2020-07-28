@@ -26,10 +26,10 @@ module.exports = function(app) {
     app.post("/api/item", function(req, res) {
         db.Refrigerator.create(req.body).then(function(dbItem) {
           //res.json(dbItem);
-            if(dbItem){
+            if(dbItem.dataValues){
                 //get value of category
                 //to test
-                let itemName = dbItem.category;
+                let itemName = dbItem.dataValues.category;
                 //get values from category table and check it item exist there or not
                 db.Category.findAll({
                     where : {
