@@ -15,6 +15,8 @@ module.exports = function(app) {
   // index route loads login/signup page
   app.get("/", function(req, res) {
     //res.sendFile(path.join(__dirname, "../public/blog.html"));
+    
+    //res.render("index", hbsObject);
   });
 
   // loads dashboard page withlist of items available in refrigerator

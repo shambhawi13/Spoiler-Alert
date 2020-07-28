@@ -24,8 +24,27 @@ module.exports = function(app) {
 
     // create item table 
     app.post("/api/item", function(req, res) {
-        db.User.create(req.body).then(function(dbItem) {
-          res.json(dbItem);
+        db.Refrigerator.create(req.body).then(function(dbItem) {
+          //res.json(dbItem);
+            if(dbItem){
+                //get value of category
+                //to test
+                let itemName = dbItem.category;
+                //get values from category table and check it item exist there or not
+                db.Category.findAll({
+                    where : {
+                        name = itemName
+                    }
+                }).then(function(categorySelected){
+                    if(categorySelected){
+                        //if category is found, dont create new one.
+                    }
+                    else{
+                        // if category not found, create a new category
+                        //render the item page.
+                    }
+                })
+            }
         });
       });
 
