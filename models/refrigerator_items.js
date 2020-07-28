@@ -29,7 +29,7 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
-        message_sent: {
+        expiration_sent: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         }
