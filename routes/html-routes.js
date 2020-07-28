@@ -15,7 +15,7 @@ module.exports = function(app) {
   // index route loads login/signup page
   app.get("/", function(req, res) {
       //test
-    res.sendFile(path.join(__dirname, "../public/test.html"));
+    //res.sendFile(path.join(__dirname, "../public/test.html"));
     
     //res.render("index", hbsObject);
   });
