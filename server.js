@@ -6,8 +6,6 @@
 // =============================================================
 var express = require("express");
 
-var cron = require("node-cron");
-
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -15,7 +13,6 @@ var PORT = process.env.PORT || 3000;
 
 // Requiring our models for syncing
 var db = require("./models");
-const sendMail = require("./test");
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -34,10 +31,4 @@ db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
-});
-
-
-cron.schedule("24 13 * * *", function() {
-  console.log("running scheduler");
-  sendMail();
 });
