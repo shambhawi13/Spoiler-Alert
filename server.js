@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // new
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true })); //this is the setup to use express session with parameters. 'Secret' is required and a key used for signing and/or encrypting cookies. 'saveUninitialized' allows us to store empty session objects to our session store (i.e. so that we can keep track of unique visitors even if the session object is empty).
+app.use(session({ secret: process.env.SSC, resave: true, saveUninitialized: true })); //this is the setup to use express session with parameters. 'Secret' is required and a key used for signing and/or encrypting cookies. 'saveUninitialized' allows us to store empty session objects to our session store (i.e. so that we can keep track of unique visitors even if the session object is empty).
 app.use(passport.initialize()); //middleware to initialize Passport
 app.use(passport.session()); //middleware for apps that use persistent login sessions
 
