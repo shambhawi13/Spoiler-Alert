@@ -10,7 +10,7 @@
     <!-- ling to css  -->
     <link rel="stylesheet" href="./stylesheets/style.css">
 
-    <title>Refritrack login</title>
+    <title>Refritrack sign up!</title>
   </head>
   <body>
     <body>
@@ -23,20 +23,24 @@
         <div class="container">
           <div class="row m-5">
             <div class="col-md-6 col-md-offset-3 bg-light border border-primary">
-              <h2>Login Form</h2>
-              <form class="login form-group">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="email-input" placeholder="Email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="password-input" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-outline-primary">Login</button>
-              </form>
+                <h2>Sign Up Form</h2>
+                <form class="signup">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="email-input" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="password-input" placeholder="Password">
+                  </div>
+                  <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span> <span class="msg"></span>
+                  </div>
+                  <button type="submit" class="btn btn-outline-primary">Sign Up</button>
+                </form>
               <br />
-              <p>Or sign up <a href="/">here</a></p>
+              <p>Or Login <a href="/login">here</a></p>
 
               
             </div>
