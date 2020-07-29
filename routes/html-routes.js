@@ -5,6 +5,7 @@
 // Dependencies
 // =============================================================
 var path = require("path");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 // Routes
 // =============================================================
@@ -17,6 +18,7 @@ module.exports = function (app) {
         if (req.user) {
             res.redirect("/dashboard");
         }
+        console.log(path.join(__dirname, "../public/signup.html"));
         res.sendFile(path.join(__dirname, "../public/signup.html"));
     });
 

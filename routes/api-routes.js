@@ -8,8 +8,11 @@ module.exports = function (app) {
     // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
     // otherwise send back an error
     app.post("/api/signup", function (req, res) {
-        db.User.create({
+        console.log(req.body);
+        db.Users.create({
+            
             email: req.body.email,
+            name : req.body.name,
             password: req.body.password
         })
             .then(function () {
@@ -92,7 +95,7 @@ module.exports = function (app) {
 
     app.get("/api/runScheduler", function (req, res) {
         // create variable to filter expired item corresponding to each user
-        let expDeatail = {};
+        let expDetail = {};
         db.Users.findAll({}).then(function (user) {
             // 1. get all items from refrigerator
             db.Refrigerator_items.findAll({}).then(function (dbItem) {
