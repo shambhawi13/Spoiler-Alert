@@ -28,6 +28,10 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [1]
             }
+        },
+        expiration_sent: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
         }
     });
 

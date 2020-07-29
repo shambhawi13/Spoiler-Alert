@@ -5,6 +5,7 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
+require('dotenv').config();
 
 // Sets up the Express App
 // =============================================================
@@ -13,6 +14,7 @@ var PORT = process.env.PORT || 3000;
 
 // Requiring our models for syncing
 var db = require("./models");
+// const sendMail = require("./config/mail");
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -25,6 +27,7 @@ app.use(express.static("public"));
 // =============================================================
 require("./routes/api-routes.js")(app);
 
+
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync().then(function() {
@@ -32,3 +35,5 @@ db.sequelize.sync().then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+// sendMail("qiwei.mod@gmail.com","steak");
