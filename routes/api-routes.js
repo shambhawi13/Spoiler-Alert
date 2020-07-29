@@ -79,5 +79,12 @@
         res.json(dbItem);
       });
     });
+
+    app.get("/api/runScheduler", function(req, res) {
+        // 1. get all items from refrigerator
+        db.Categories.findAll({}).then(function(dbItem) {
+          res.json(dbItem);
+        });
+      });
   
    };
