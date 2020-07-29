@@ -92,7 +92,7 @@ module.exports = function (app) {
 
     app.get("/api/runScheduler", function (req, res) {
         // create variable to filter expired item corresponding to each user
-        let expDeatail = {};
+        let expDetail = {};
         db.Users.findAll({}).then(function (user) {
             // 1. get all items from refrigerator
             db.Refrigerator_items.findAll({}).then(function (dbItem) {
