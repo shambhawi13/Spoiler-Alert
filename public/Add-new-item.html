@@ -27,10 +27,12 @@
         <div class="container">
             <div class="row m-5">
                 <div class="col">
-                    <h2>Add new items to your fridge</h2>
-
+                    <div class="row">
+                        <h2 class="col-md-8">Add new items to your fridge</h2>
+                        <span class="col-md-4" ><button type="button" class="btn btn-warning btn-block">Add new category!</button></span>
+                     </div>
                     <form class="form-inline">
-                        <div class="form-group mx-sm-3 mb-2">
+                        <div class="form-group mb-2">
                             <label for="text" class="sr-only">Name</label>
                             <input type="name-item" class="form-control m-2" id="input-name" placeholder="Name">
 
@@ -45,10 +47,24 @@
 
                             <label for="inputPassword2" class="sr-only">Unit Measurement</label>
                             <input type="text" class="form-control m-2" id="inputMeasurement" placeholder="Unit Measurement">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Dropdown button
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                              </div>
                         </div>
                     </form>
+                    
+                    
 
                     <button type="button" class="btn btn-primary btn-lg btn-block">Add new item!</button>
+                    <!-- Button trigger modal -->
+
 
 
                 </div>
