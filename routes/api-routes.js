@@ -121,6 +121,14 @@ module.exports = function (app) {
                     if(!i.expiration_sent && diffInDays<2){
                         expDetail[i.UserId].items.push(i.name);
                         // todo update the expiration_sent to true
+                        db.Refrigerator_items.update(
+                            {expiration_sent: true},
+                            {where: {id: i.id} }
+                          )
+                          .then(function(result) {
+                            console.log('Updated : ',i.id, result);
+                          })
+
                     } 
                 }
                 for(let i in expDetail){
