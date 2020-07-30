@@ -1,5 +1,6 @@
 node_modules
 .DS_Store
 test.js
+public/js/test.js
 public/test.html
 .env
