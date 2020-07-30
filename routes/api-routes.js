@@ -96,6 +96,17 @@ module.exports = function (app) {
         });
     });
 
+    //delete all items from Refrigerator_items
+    app.delete("/api/item/deleteAll/:userid", function (req, res) {
+        db.Refrigerator_items.destroy({
+            where: {
+                UserId: req.params.userid
+            }
+        }).then(function (dbItem) {
+            res.json(dbItem);
+        });
+    });
+
     app.get("/api/runScheduler", function (req, res) {
         // create variable to filter expired item corresponding to each user
         let expDetail = {};
