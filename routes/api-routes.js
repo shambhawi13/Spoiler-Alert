@@ -113,7 +113,10 @@ module.exports = function (app) {
             }).then(function (dbItem) {
                 //console.log(dbItem)
                 for(let i of dbItem){
-                    expDetail[i.UserId].items.push(i.name);
+                    if(!i.expiration_sent){
+                        expDetail[i.UserId].items.push(i.name);
+                        // todo update the expiration_sent to true
+                    } 
                 }
                 for(let i in expDetail){
                     //console.log(i,expDetail[i]);
