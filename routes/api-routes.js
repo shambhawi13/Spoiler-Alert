@@ -3,6 +3,8 @@ var moment = require('moment'); // require
 var passport = require("../config/passport");
 var sendMail = require("../config/mail");
 
+var currentDate = moment().startOf('day').hour(12);
+
 module.exports = function (app) {
     // create user
     // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -113,6 +115,7 @@ module.exports = function (app) {
             }).then(function (dbItem) {
                 //console.log(dbItem)
                 for(let i of dbItem){
+                    console.log(currentDate.diff(dbItem.expiration, 'days'),currentDate,dbItem.expiration); 
                     if(!i.expiration_sent){
                         expDetail[i.UserId].items.push(i.name);
                         // todo update the expiration_sent to true
