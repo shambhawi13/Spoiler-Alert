@@ -33,6 +33,7 @@ app.use(passport.session()); //middleware for apps that use persistent login ses
 
 // Routes
 // =============================================================
+require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
 
