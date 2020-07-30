@@ -115,8 +115,10 @@ module.exports = function (app) {
             }).then(function (dbItem) {
                 //console.log(dbItem)
                 for(let i of dbItem){
-                    console.log(currentDate.diff(dbItem.expiration, 'days'),currentDate,dbItem.expiration); 
-                    if(!i.expiration_sent){
+                    var expirationFormatted = moment(i.expiration + "T12:00:00");
+                    //console.log(expirationFormatted.diff(currentDate, 'days'),'>>>',currentDate,'>>>',expirationFormatted); 
+                    let diffInDays = expirationFormatted.diff(currentDate, 'days');
+                    if(!i.expiration_sent && diffInDays<2){
                         expDetail[i.UserId].items.push(i.name);
                         // todo update the expiration_sent to true
                     } 
