@@ -1,6 +1,7 @@
 var db = require("../models");
 var moment = require('moment'); // require
 var passport = require("../config/passport");
+var sendMail = require("../config/mail");
 
 module.exports = function (app) {
     // create user
@@ -96,10 +97,28 @@ module.exports = function (app) {
     app.get("/api/runScheduler", function (req, res) {
         // create variable to filter expired item corresponding to each user
         let expDetail = {};
-        db.Users.findAll({}).then(function (user) {
+        db.Users.findAll({
+            raw: true
+        }).then(function (user) {
+            //console.log(user);
+            for(let i of user){
+                expDetail[i.id] = {};
+                expDetail[i.id].email = i.email;
+                expDetail[i.id].items = [];
+            }
+            //console.log(expDetail);
             // 1. get all items from refrigerator
-            db.Refrigerator_items.findAll({}).then(function (dbItem) {
-                res.json(dbItem);
+            db.Refrigerator_items.findAll({
+                raw: true
+            }).then(function (dbItem) {
+                //console.log(dbItem)
+                for(let i of dbItem){
+                    expDetail[i.UserId].items.push(i.name);
+                }
+                for(let i in expDetail){
+                    //console.log(i,expDetail[i]);
+                    sendMail(expDetail[i].email,expDetail[i].items);
+                }
             });
         })
 
