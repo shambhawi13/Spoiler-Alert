@@ -9,24 +9,29 @@ const transporter = nodemailer.createTransport({
 });
 
 function mailOptions (email,item){
-    let mailOptions = {
+  var list = item.join(", ")
+  
+  let mailOptions = {
         from: 'test@something.com',
         to: `${email}`,
-        subject: `Your ${item} is about to expire!`,
-        text: `Your ${item} will expire in two days!`
+        subject: `Your item(s) will expire soon!`,
+        text: `Thank you for using Refri-track. 
+        Your ${list} will expire in two days!`
       };
       return mailOptions;
 }
 
 
 function sendMail(email,item){
+  if(item.length>0){
     transporter.sendMail(mailOptions(email,item), function (error, info) {
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-      });
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
+  }
 }
 
 module.exports = sendMail;
