@@ -76,12 +76,12 @@ module.exports = function (app) {
     });
 
     // update item with particular id
-    app.put("/api/item", function (req, res) {
+    app.put("/api/item/:id", function (req, res) {
         db.Refrigerator_items.update(
             req.body,
             {
                 where: {
-                    id: req.body.id
+                    UserId: req.params.id
                 }
             }).then(function (dbItem) {
                 res.json(dbItem);
