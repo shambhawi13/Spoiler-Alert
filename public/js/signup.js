@@ -3,7 +3,6 @@ $(document).ready(function() {
     var signUpForm = $("form.signup");
     var emailInput = $("input#email-input");
     var passwordInput = $("input#password-input");
-    // tobe removed later
     var nameInput = $("input#name-input");;
   
     // When the signup button is clicked, we validate the email and password are not blank
@@ -12,9 +11,9 @@ $(document).ready(function() {
       var userData = {
         email: emailInput.val().trim(),
         password: passwordInput.val().trim(),
-        name: nameInput
+        name: nameInput.val().trim()
       };
-      //console.log(userData);
+      //console.log("userdata",userData);
   
       if (!userData.email || !userData.password || !userData.name) {
         return;
@@ -23,6 +22,7 @@ $(document).ready(function() {
       signUpUser(userData.email, userData.password, userData.name);
       emailInput.val("");
       passwordInput.val("");
+      nameInput.val("");
       // todo empty the name field
     });
   
