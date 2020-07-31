@@ -6,7 +6,7 @@ $(document).ready(function () {
     //add delete on click
 
 
-    var userID = 1 //to be updated with session storage id
+    var userID = window.sessionStorage.getItem("userId")
     $.get("/api/items/" + userID).then(function (result) {
 
         var tb = $("#tableItems");
@@ -24,8 +24,8 @@ $(document).ready(function () {
             <label for="inputPassword2" class="sr-only">Quantity to eat!</label>
             <input type="text" class="form-control m-2" id="inputQuantity${result[i].id}" placeholder="Quantity">
         </form></td>`);
-            var newEatButton = $(`<td><button type="button" class="btn btn-outline-primary" data-value="${result[i].id}">Eat it!</button></td>`)
-            var newDelButton = $(`<td><button type="delete" class="btn btn-outline-danger" data-value="${result[i].id}">Delete it!</button></td>`)
+            var newEatButton = $(`<td><button type="button" class="btn btn-outline-primary updateButton" data-value="${result[i].id}" data-quantity="${result[i].quantity}">Eat it!</button></td>`)
+            var newDelButton = $(`<td><button type="delete" class="btn btn-outline-danger deleteButton" data-value="${result[i].id}">Delete it!</button></td>`)
 
             newTdName.append(result[i].name);
             newTdDate.append(result[i].date_purchased);
@@ -42,46 +42,69 @@ $(document).ready(function () {
 
     })
 
-    $(document).on("click", ".updateItem", captureUpdate);
+    $(document).on("click", ".updateButton", captureUpdate);
 
 
-    function captureUpdate (event){
+
+    function captureUpdate(event) {
         event.preventDefault();
-        if (event.target.matches("button")) {
-            console.log($(this))
-            var value = $(this).attr("data-value")
-            var prevQuantity = $(this).attr("data-quantity")
-            var redQuantity = $(`#inputQuantity${value}`).val().trim();
+        console.log($(this))
+        var value = $(this).attr("data-value")
+        var prevQuantity = $(this).attr("data-quantity")
+        var redQuantity = $(`#inputQuantity${value}`).val().trim();
 
-            var itemData = {
-                // name:$("#input-name").val().trim(),
-                // date_purchased:$("#date-purchased").val(),
-                // expiration:$("#inputExpiration").val().trim(),
-                quantity: prevQuantity-redQuantity,
-                // unit_measurement:$("#inputMeasurement").val().trim(),
-                // CategoryId:$("#category-dropdown").val().trim(),
-                id: value,
-            }
-            console.log(itemData);
-            updateItem(itemData);
+        var itemData = {
+            // name:$("#input-name").val().trim(),
+            // date_purchased:$("#date-purchased").val(),
+            // expiration:$("#inputExpiration").val().trim(),
+            quantity: prevQuantity - redQuantity,
+            // unit_measurement:$("#inputMeasurement").val().trim(),
+            // CategoryId:$("#category-dropdown").val().trim(),
+            id: value,
         }
-
-
+        console.log(itemData);
+        updateItem(itemData);
     }
-
-    // $.put("/api/item/" + userID).then(function (result) {
-
-    // })
 
     function updateItem(item) {
         $.ajax({
-          method: "PUT",
-          url: "/api/item",
-          data: item
+            method: "PUT",
+            url: "/api/item",
+            data: item
         })
-          .then(function(response) {
-            console.log(response);
-            location.reload();
-          });
-      }
+            .then(function (response) {
+                console.log(response);
+                location.reload();
+            });
+    }
+
+    $(document).on("click", ".deleteButton", deleteItem);
+
+    function deleteItem(event) {
+        event.preventDefault();
+        var value = $(this).attr("data-value")
+
+        // var itemData = {
+        //     // name:$("#input-name").val().trim(),
+        //     // date_purchased:$("#date-purchased").val(),
+        //     // expiration:$("#inputExpiration").val().trim(),
+        //     // quantity: prevQuantity-redQuantity,
+        //     // unit_measurement:$("#inputMeasurement").val().trim(),
+        //     // CategoryId:$("#category-dropdown").val().trim(),
+        //     id: value,
+        // }
+
+        deleteFunc(value);
+    }
+
+    function deleteFunc(itemId) {
+        $.ajax({
+            method: "DELETE",
+            url: "/api/item/" + itemId,
+        })
+            .then(function (response) {
+                console.log(response);
+                location.reload();
+            });
+    }
 })

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var userID = 1 //to be updated with session storage id
+    var userID = window.sessionStorage.getItem("userId");
     $.get("/api/items/" + userID).then(function (result) {
         console.log(result)
 

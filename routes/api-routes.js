@@ -12,9 +12,9 @@ module.exports = function (app) {
     // otherwise send back an error
     app.post("/api/signup", function (req, res) {
         db.Users.create({
-            
+
             email: req.body.email,
-            name : req.body.name,
+            name: req.body.name,
             password: req.body.password
         })
             .then(function () {
@@ -29,8 +29,8 @@ module.exports = function (app) {
     // If the user has valid login credentials, send them to the members page.
     // Otherwise the user will be sent an error
     app.post("/api/login", passport.authenticate("local"), function (req, res) {
-       console.log(req.user);
-        res.json(req.user);
+        console.log(req.user);
+        res.json({ ...req.user.dataValues, password: undefined });
     });
 
     // Route for logging user out
@@ -60,7 +60,7 @@ module.exports = function (app) {
         db.Refrigerator_items.findAll({
             where: {
                 UserId: req.params.id
-              },
+            },
             include: [db.Categories]
         }).then(function (dbItem) {
             res.json(dbItem);
@@ -118,7 +118,9 @@ module.exports = function (app) {
             raw: true
         }).then(function (user) {
             //console.log(user);
-            for(let i of user){
+            // const userKeys = Object.keys(user)//do a for loop over userKeys which is now an array of keys in the object user[key]
+
+            for (let i of user) {
                 expDetail[i.id] = {};
                 expDetail[i.id].email = i.email;
                 expDetail[i.id].items = [];
@@ -129,26 +131,26 @@ module.exports = function (app) {
                 raw: true
             }).then(function (dbItem) {
                 //console.log(dbItem)
-                for(let i of dbItem){
+                for (let i of dbItem) {
                     var expirationFormatted = moment(i.expiration + "T12:00:00");
                     //console.log(expirationFormatted.diff(currentDate, 'days'),'>>>',currentDate,'>>>',expirationFormatted); 
                     let diffInDays = expirationFormatted.diff(currentDate, 'days');
-                    if(!i.expiration_sent && diffInDays<2){
+                    if (!i.expiration_sent && diffInDays < 2) {
                         expDetail[i.UserId].items.push(i.name);
                         // todo update the expiration_sent to true
                         db.Refrigerator_items.update(
-                            {expiration_sent: true},
-                            {where: {id: i.id} }
-                          )
-                          .then(function(result) {
-                            console.log('Updated : ',i.id, result);
-                          })
+                            { expiration_sent: true },
+                            { where: { id: i.id } }
+                        )
+                            .then(function (result) {
+                                console.log('Updated : ', i.id, result);
+                            })
 
-                    } 
+                    }
                 }
-                for(let i in expDetail){
+                for (let i in expDetail) {
                     //console.log(i,expDetail[i]);
-                    sendMail(expDetail[i].email,expDetail[i].items);
+                    sendMail(expDetail[i].email, expDetail[i].items);
                 }
             });
         })
