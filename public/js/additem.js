@@ -32,7 +32,7 @@ $(document).ready(function() {
             quantity:$("#inputQuantity").val().trim(),
             unit_measurement:$("#inputMeasurement").val().trim(),
             CategoryId:$("#category-dropdown").val().trim(),
-            UserId:$("#input-name").val().trim(),
+            UserId: 1,
         }
         console.log(itemData);
 
