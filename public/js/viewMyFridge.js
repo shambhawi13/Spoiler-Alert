@@ -1,43 +1,49 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-function GetFridgeItems(){ 
-    var queryURL = "/api/item";
-    $.ajax({
-        url:queryURL,
-        method:"GET"
-    }).then(function(response){
-        console.log(response);
+    function GetFridgeItems() {
+        var queryURL = "/api/item";
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
 
-        Tb = $("#tableItems");
-        newTr = $("<tr>");
-        
-        itemName = $("<td>").text(response.name);
-        itemName.attr("class", "text-info")
-        itemName.attr("scope", "row")
-        newTr.append(itemName);
-        
-        
-        DatePurchased = $("<td>").text(response.date_purchased);
-        newTr.append(DatePurchased);
-        
-        expiration = $("<td>").text(response.expiration);
-        newTr.append(expiration);
-        
-        quantity = $("<td>").text(response.quantity);
-        newTr.append(quantity);
-        
-        unitMeasurement = $("<td>").text(response.unit_measurement);
-        newTr.append(unitMeasurement);
-        
-        category = $("<td>").text(response.category);
-        newTr.append(category);
-        Tb.append(newTr);
-    
-    }) 
- }
+            for (var i = 0; i < response.length; i++) {
 
-   
-        
+                Tb = $("#tableItems");
+                newTr = $("<tr>");
+                //Name
+                itemName = $("<td>").text(response.name);
+                itemName.attr("class", "text-info")
+                itemName.attr("scope", "row")
+                newTr.append(itemName);
+
+                //Date purchased
+                DatePurchased = $("<td>").text(response.date_purchased);
+                newTr.append(DatePurchased);
+                //Expiration
+                expiration = $("<td>").text(response.expiration);
+                newTr.append(expiration);
+                //Quantity
+                quantity = $("<td>").text(response.quantity);
+                newTr.append(quantity);
+                //UnitMeasurement
+                unitMeasurement = $("<td>").text(response.unit_measurement);
+                newTr.append(unitMeasurement);
+                //Category
+                category = $("<td>").text(response.category);
+                newTr.append(category);
+                Tb.append(newTr);
+
+            }
+
+
+
+        })
+    }
+
+
+
 
 
 
