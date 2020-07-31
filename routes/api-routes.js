@@ -55,9 +55,12 @@ module.exports = function (app) {
     });
 
     // get all items in Refrigerator_items
-    app.get("/api/items", function (req, res) {
+    app.get("/api/items/:id", function (req, res) {
         // 1. Add a join to include all of each Author's Posts
         db.Refrigerator_items.findAll({
+            where: {
+                UserId: req.params.id
+              },
             include: [db.Categories]
         }).then(function (dbItem) {
             res.json(dbItem);
