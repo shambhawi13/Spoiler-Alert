@@ -35,7 +35,7 @@
                     <a class="nav-link" href="/fridge/addItem">Fill Refrigerator</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/dasboard" tabindex="-1" aria-disabled="true">Dashborad</a>
+                    <a class="nav-link" href="/dashboard" tabindex="-1" aria-disabled="true">Dashborad</a>
                 </li>
 
             </ul>
@@ -78,20 +78,15 @@
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Select a category</label>
                             <select class="form-control" id="category-dropdown">
-                                <!-- <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option> -->
+            
                             </select>
                         </div>
                         <div>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-warning" data-toggle="modal"
-                                data-target="#exampleModal">
-                                Add category
-                            </button>
-
+                            <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal"> Add categor </button>
+                            <button type="submit" id="add-item" class="btn btn-primary float-right btn-lg">Add newitem!</button>
+                        
+        
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -120,10 +115,7 @@
                             </div>
                         </div>
 
-                        <div class="col m-3">
-                            <button type="submit" id="add-item" class="btn btn-primary btn-lg btn-block">Add new
-                                item!</button>
-                        </div>
+                        
                     </form>
 
 
