@@ -12,6 +12,7 @@ passport.use(new LocalStrategy(
   function(email, password, done) { //verify call back required by passport - checking email and password parameters and returning a user when "done"
     // When a user tries to sign in this code runs
     db.Users.findOne({  //searching db for record where email equals the email entered
+      raw: true,
       where: {
         email: email
       }
