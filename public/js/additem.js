@@ -36,8 +36,8 @@ $(document).ready(function() {
         }
         console.log(itemData);
         $.post("/api/item",itemData).then(function(result){
-            console.log(result)
-            //location.reload()
+            console.log(result);
+            location.reload();
         })
 
     })
