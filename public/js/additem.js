@@ -27,7 +27,7 @@ $(document).ready(function() {
         event.preventDefault();
         var itemData = {
             name:$("#input-name").val().trim(),
-            date_purchased:$("#input-purchased").val(),
+            date_purchased:$("#date-purchased").val(),
             expiration:$("#inputExpiration").val().trim(),
             quantity:$("#inputQuantity").val().trim(),
             unit_measurement:$("#inputMeasurement").val().trim(),
@@ -35,6 +35,10 @@ $(document).ready(function() {
             UserId: 1,
         }
         console.log(itemData);
+        $.post("/api/item",itemData).then(function(result){
+            console.log(result)
+            //location.reload()
+        })
 
     })
 
