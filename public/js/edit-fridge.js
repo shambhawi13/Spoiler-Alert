@@ -107,4 +107,17 @@ $(document).ready(function () {
                 location.reload();
             });
     }
+
+    $("#deleteAllButton").on("click", deleteAll);
+
+    function deleteAll() {
+        $.ajax({
+            method: "DELETE",
+            url: "/api/item/deleteAll/" + userID,
+        })
+            .then(function (response) {
+                console.log(response);
+                location.reload();
+            });
+    }
 })
