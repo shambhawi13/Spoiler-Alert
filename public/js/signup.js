@@ -39,12 +39,12 @@ $(document).ready(function () {
                 window.sessionStorage.setItem("userId", user.id);
                 window.location.replace("/fridge/addItem");
                 // If there's an error, handle it by throwing up a bootstrap alert
-            });
-        //.catch(handleLoginErr);
+            })
+            .catch(handleLoginErr);
     }
 
-    // function handleLoginErr(err) {
-    //   $("#alert .msg").text(err.responseJSON);
-    //   $("#alert").fadeIn(500);
-    // }
+    function handleLoginErr(err) {
+      $("#alert .msg").text(err.responseJSON);
+      $("#alert").fadeIn(500);
+    }
 });
