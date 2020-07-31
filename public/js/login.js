@@ -34,7 +34,9 @@ $(document).ready(function() {
         email: email,
         password: password
       })
-        .then(function() {
+        .then(function(user) {
+          console.log(user);
+          window.sessionStorage.setItem("userId",user.id);
           window.location.replace("/dashboard");
           // If there's an error, log the error
         })
