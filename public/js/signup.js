@@ -40,11 +40,12 @@ $(document).ready(function () {
                 window.location.replace("/fridge/addItem");
                 // If there's an error, handle it by throwing up a bootstrap alert
             })
-            .catch(handleLoginErr);
+            .fail(handleLoginErr);
     }
 
     function handleLoginErr(err) {
-      $("#alert .msg").text(err.responseJSON);
-      $("#alert").fadeIn(500);
+        let errorMsg = err.responseJSON.errors[0].message;
+        $("#alert .msg").text(errorMsg);
+        $("#alert").fadeIn(500);
     }
 });
