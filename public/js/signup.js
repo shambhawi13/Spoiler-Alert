@@ -4,7 +4,7 @@ $(document).ready(function() {
     var emailInput = $("input#email-input");
     var passwordInput = $("input#password-input");
     // tobe removed later
-    var nameInput = "Shambhawi";
+    var nameInput = $("input#name-input");;
   
     // When the signup button is clicked, we validate the email and password are not blank
     signUpForm.on("submit", function(event) {
