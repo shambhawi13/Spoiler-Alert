@@ -12,11 +12,10 @@ passport.use(new LocalStrategy(
   function(email, password, done) { //verify call back required by passport - checking email and password parameters and returning a user when "done"
     // When a user tries to sign in this code runs
     db.Users.findOne({  //searching db for record where email equals the email entered
-      raw: true,
       where: {
         email: email
       }
-    }).then(function(dbUser) {
+    },{raw: true}).then(function(dbUser) {
       // If there's no user with the given email
       if (!dbUser) {
         return done(null, false, { //returns false (i.e. no user)
