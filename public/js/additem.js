@@ -32,12 +32,12 @@ $(document).ready(function() {
             quantity:$("#inputQuantity").val().trim(),
             unit_measurement:$("#inputMeasurement").val().trim(),
             CategoryId:$("#category-dropdown").val().trim(),
-            UserId: 1,
+            UserId: window.sessionStorage.getItem("userId"),
         }
         console.log(itemData);
         $.post("/api/item",itemData).then(function(result){
-            console.log(result)
-            //location.reload()
+            console.log(result);
+            location.reload();
         })
 
     })
