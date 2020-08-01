@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- ling to css  -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Courgette&family=Kalam:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
 
     <title>Refritrack Add new items</title>
@@ -78,15 +81,17 @@
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Select a category</label>
                             <select class="form-control" id="category-dropdown">
-            
+
                             </select>
                         </div>
                         <div>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal"> Add category </button>
-                            <button type="submit" id="add-item" class="btn btn-primary float-right btn-lg">Add item!</button>
-                        
-        
+                            <button type="button" class="btn btn-warning btn-lg" data-toggle="modal"
+                                data-target="#exampleModal"> Add category </button>
+                            <button type="submit" id="add-item" class="btn btn-primary float-right btn-lg">Add
+                                item!</button>
+
+
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -115,7 +120,7 @@
                             </div>
                         </div>
 
-                        
+
                     </form>
 
 
@@ -123,21 +128,69 @@
                 </div>
             </div>
         </div>
+    </div>
+    <!--footer-->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5 class="footer-head">Contributors</h5>
+                </div>
+                <div class="col-md-4">
+                    <h5>Christopher Lee</h5>
+                    <h6>christopher.neal.lee@gmail.com</h6>
+                    <h6>
+                        <a href="https://github.com/CofChips" target="blank"><i class="fa fa-github-square git"></i></a>
+                        <a href="https://www.linkedin.com/in/christophernlee/"><i
+                                class="fa fa-linkedin-square li"></i></a>
+                    </h6>
+                </div>
+                <div class="col-md-4">
+                    <h5>Shamhawi Kumari</h5>
+                    <h6>shambhawi.kumari1393@gmail.com</h6>
+                    <h6>
+                        <a href="https://github.com/shambhawi13" target="blank"><i
+                                class="fa fa-github-square git"></i></a>
+                        <a href="https://www.linkedin.com/in/shambhawi-kumari/"><i
+                                class="fa fa-linkedin-square li"></i></a>
+                    </h6>
+                </div>
+                <div class="col-md-4">
+                    <h5>Sergio Lopez</h5>
+                    <h6>sc.lopezm@hotmail.com</h6>
+                    <h6>
+                        <a href="https://github.com/Cherjios" target="blank"><i class="fa fa-github-square git"></i></a>
+                        <a href="https://www.linkedin.com/in/sergio-lopez-81790579/"><i
+                                class="fa fa-linkedin-square li"></i></a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-copyright">
+            <div class="container footer-container">
+                <h6 class="col-md-6 copyright">© 2020 Copyright </h6>
+                <!-- d-flex justify-content-end -->
+                <a class=" white col-md-6 d-flex justify-content-end" href="#!">Github repo &nbsp; <i
+                        class="fa fa-github-square git"></i></a>
+            </div>
+        </div>
+    </footer>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery.js"></script>
-<!-- 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script> -->
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-            crossorigin="anonymous"></script>
-        <script src="../js/additem.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="../js/additem.js"></script>
 </body>
 
 </html>
