@@ -5,6 +5,9 @@
     padding-top: 10px;
     padding-bottom: 10px;
     font-family: 'Kalam', cursive;
+    position: absolute;
+    /* bottom: 0; */
+    width: 100%;
 }
 
 .git, .li{
@@ -41,4 +44,8 @@ hr{
 .header-tag{
     font-family: 'Kalam', cursive; 
     color: white;
+}
+
+.set-min-height{
+    min-height: 550px;
 }
