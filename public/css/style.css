@@ -1,0 +1,34 @@
+.page-footer{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    height: fit-content;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Kalam', cursive;
+}
+
+.git, .li{
+    font-size:30px;
+    color:white
+}
+
+.footer-head{
+    font-family: 'Anton', sans-serif;
+}
+
+.footer-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.copyright{
+    padding-top: 0.5em;
+}
+
+.white{
+    color: white;
+}
+
+hr{
+    background-color: white;
+}

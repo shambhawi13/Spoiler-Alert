@@ -2,65 +2,68 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <!-- ling to css  -->
-    <link rel="stylesheet" href="../css/style.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- ling to css  -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Courgette&family=Kalam:wght@700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/style.css">
 
-    <title>Items in your fridge</title>
+  <title>Items in your fridge</title>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-success">
     <a class="navbar-brand" href="/fridge/view">View Fridge!</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="/fridge/edit">Eat something!</a> <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/fridge/addItem">Fill Refrigerator</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/dashboard" tabindex="-1" aria-disabled="true">Dashborad</a>
-            </li>
-        </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/fridge/edit">Eat something!</a> <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/fridge/addItem">Fill Refrigerator</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/dashboard" tabindex="-1" aria-disabled="true">Dashborad</a>
+        </li>
+      </ul>
     </div>
     <ul class="navbar-nav float-right">
-        <li class="nav-item">
-            <a class="nav-link" href="/logout" tabindex="-1" aria-disabled="true">LogOut</a>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout" tabindex="-1" aria-disabled="true">LogOut</a>
+      </li>
     </ul>
-</div>
+    </div>
 
-</nav>
-        <div class="container">
-            <div class="row m-5">
-                <div class="col bg-light">
-                    <h2>Present in your fridge!</h2>
-                    <table class="table">
-                        <thead class="thead-dark">
-                          <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Date Purchased</th>
-                            <th scope="col">Expiration</th>
-                            <th scope="col">What you have!</th>
-                            <th scope="col">Unit</th>
-                            <th scope="col">Category</th>
+  </nav>
+  <div class="container">
+    <div class="row m-5">
+      <div class="col bg-light">
+        <h2>Present in your fridge!</h2>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Date Purchased</th>
+              <th scope="col">Expiration</th>
+              <th scope="col">What you have!</th>
+              <th scope="col">Unit</th>
+              <th scope="col">Category</th>
 
-                          </tr>
-                        </thead>
-                        <tbody id="tableItems">
-                          <!-- <tr>
+            </tr>
+          </thead>
+          <tbody id="tableItems">
+            <!-- <tr>
                             <td scope="row" class="text-info">Eggs</td>
                             <td>07/28/2020</td>
                             <td>08/01/2020</td>
@@ -76,32 +79,70 @@
                             <td>lt</td>
                             <td>Dairy</td>
                           </tr> -->
-                        </tbody>
-                      </table>
+          </tbody>
+        </table>
 
-                   
-                    
-                    
+      </div>
+    </div>
+  </div>
 
-
-                </div>
-            </div>
+  <!--footer-->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h5 class="footer-head">Contributors</h5>
         </div>
-
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery.js"></script>
-        <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        <div class="col-md-4">
+          <h5>Christopher Lee</h5>
+          <h6>christopher.neal.lee@gmail.com</h6>
+          <h6>
+            <a href="https://github.com/CofChips" target="blank"><i class="fa fa-github-square git"></i></a>
+            <a href="https://www.linkedin.com/in/christophernlee/"><i class="fa fa-linkedin-square li"></i></a>
+          </h6>
+        </div>
+        <div class="col-md-4">
+          <h5>Shamhawi Kumari</h5>
+          <h6>shambhawi.kumari1393@gmail.com</h6>
+          <h6>
+            <a href="https://github.com/shambhawi13" target="blank"><i class="fa fa-github-square git"></i></a>
+            <a href="https://www.linkedin.com/in/shambhawi-kumari/"><i class="fa fa-linkedin-square li"></i></a>
+          </h6>
+        </div>
+        <div class="col-md-4">
+          <h5>Sergio Lopez</h5>
+          <h6>sc.lopezm@hotmail.com</h6>
+          <h6>
+            <a href="https://github.com/Cherjios" target="blank"><i class="fa fa-github-square git"></i></a>
+            <a href="https://www.linkedin.com/in/sergio-lopez-81790579/"><i class="fa fa-linkedin-square li"></i></a>
+          </h6>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-copyright">
+      <div class="container footer-container">
+        <h6 class="col-md-6 copyright">© 2020 Copyright </h6>
+        <!-- d-flex justify-content-end -->
+        <a class=" white col-md-6 d-flex justify-content-end" href="#!">Github repo &nbsp; <i
+            class="fa fa-github-square git"></i></a>
+      </div>
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script> -->
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-            crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
 
-        <script src="../js/viewMyFridge.js"></script>
-    </body>
+  <script src="../js/viewMyFridge.js"></script>
+</body>
 
 </html>
