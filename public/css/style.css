@@ -32,3 +32,13 @@
 hr{
     background-color: white;
 }
+
+.header-head{
+    font-family: 'Anton', sans-serif; 
+    font-size: 60px; color: white;
+}
+
+.header-tag{
+    font-family: 'Kalam', cursive; 
+    color: white;
+}
