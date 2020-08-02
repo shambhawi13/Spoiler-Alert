@@ -40,9 +40,12 @@ $(document).ready(function() {
           window.location.replace("/dashboard");
           // If there's an error, log the error
         })
-        .catch(function(err) {
-          console.log(err);
-        });
+        .fail(handleLoginErr);
+    }
+    function handleLoginErr(err) {
+        let errorMsg = err.responseJSON || "invalid login";
+        $("#alert .msg").text(errorMsg);
+        $("#alert").fadeIn(500);
     }
   });
   
