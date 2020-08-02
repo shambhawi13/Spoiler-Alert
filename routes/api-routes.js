@@ -43,6 +43,8 @@ module.exports = function (app) {
     app.post("/api/item", function (req, res) {
         db.Refrigerator_items.create(req.body).then(function (dbItem) {
             res.json(dbItem);
+        }).catch(function (err) {
+            res.status(401).json(err);
         });
     });
 
@@ -51,6 +53,8 @@ module.exports = function (app) {
         db.Categories.create(req.body).then(function (dbUser) {
             console.log(dbUser);
             res.json(dbUser);
+        }).catch(function (err) {
+            res.status(401).json(err);
         });
     });
 
@@ -64,6 +68,8 @@ module.exports = function (app) {
             include: [db.Categories]
         }).then(function (dbItem) {
             res.json(dbItem);
+        }).catch(function (err) {
+            res.status(404).json(err);
         });
     });
 
@@ -72,6 +78,8 @@ module.exports = function (app) {
         // 1. Add a join to include all of each Author's Posts
         db.Categories.findAll({}).then(function (dbItem) {
             res.json(dbItem);
+        }).catch(function (err) {
+            res.status(404).json(err);
         });
     });
 
@@ -86,6 +94,8 @@ module.exports = function (app) {
                 }
             }).then(function (dbItem) {
                 res.json(dbItem);
+            }).catch(function (err) {
+                res.status(401).json(err);
             });
     });
 
