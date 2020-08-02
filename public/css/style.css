@@ -5,6 +5,9 @@
     padding-top: 10px;
     padding-bottom: 10px;
     font-family: 'Kalam', cursive;
+    position: absolute;
+    /* bottom: 0; */
+    width: 100%;
 }
 
 .git, .li{
@@ -12,7 +15,7 @@
     color:white;
 }
 
-.footer-head{
+.footer-head, .font-style{
     font-family: 'Anton', sans-serif;
 }
 
@@ -41,4 +44,22 @@ hr{
 .header-tag{
     font-family: 'Kalam', cursive; 
     color: white;
+}
+
+.set-min-height{
+    min-height: 550px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }

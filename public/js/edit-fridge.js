@@ -5,7 +5,8 @@ $(document).ready(function () {
     //send put request with data
     //add delete on click
 
-
+    var currentDate = moment().startOf('day').hour(12);
+    console.log(currentDate); 
     var userID = window.sessionStorage.getItem("userId")
     $.get("/api/items/" + userID).then(function (result) {
 
@@ -29,7 +30,24 @@ $(document).ready(function () {
 
             newTdName.append(result[i].name);
             newTdDate.append(result[i].date_purchased);
-            newTdExpiration.append(result[i].expiration);
+            var expirationFormatted = moment(result[i].expiration + "T12:00:00");
+            let diffInDays = expirationFormatted.diff(currentDate, 'days');
+            let formattedDays = diffInDays + " days left";
+            if(diffInDays === 0){
+                formattedDays = "expiring today";
+                $(newTdExpiration).css({
+                    "color":"darkorange",
+                    "font-weight":"bold"}
+                    );
+            }
+            else if(diffInDays < 0){
+                formattedDays = "expired";
+                $(newTdExpiration).css({
+                    "color":"crimson",
+                    "font-weight":"bold"}
+                    );
+            }
+            newTdExpiration.append(formattedDays);
             newTdQuantity.append(result[i].quantity);
             newTdUnit.append(result[i].unit_measurement);
             // newTdCategory.append(result[i].Category.name)
