@@ -81,7 +81,16 @@ $(document).ready(function () {
             id: value,
         }
         console.log(itemData);
-        updateItem(itemData);
+        //show error message if quantity entered is greater than quantity available
+        if(itemData.quantity < 0){
+            $(`#inputQuantity${value}`).css({"border-color":"red"});
+            $(`#inputQuantity${value}`).text("");
+        }
+        else{
+            $(`#inputQuantity${value}`).css({"border":" 1px solid #ced4da"});
+            updateItem(itemData);
+        }
+        
     }
 
     function updateItem(item) {
