@@ -35,9 +35,17 @@ $(document).ready(function () {
             let formattedDays = diffInDays + " days left";
             if(diffInDays === 0){
                 formattedDays = "expiring today";
+                $(newTdExpiration).css({
+                    "color":"darkorange",
+                    "font-weight":"bold"}
+                    );
             }
             else if(diffInDays < 0){
                 formattedDays = "expired";
+                $(newTdExpiration).css({
+                    "color":"crimson",
+                    "font-weight":"bold"}
+                    );
             }
             newTdExpiration.append(formattedDays);
             newTdQuantity.append(result[i].quantity);
