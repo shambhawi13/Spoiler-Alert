@@ -15,39 +15,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/nav-bar.css">
 
     <title>Eat something from your fridge</title>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-success">
-        <a class="navbar-brand" href="/fridge/edit">Eat something!</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/fridge/view">View my fridge!</a> <span
-                        class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/fridge/addItem">Fill Refrigerator</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/dashboard" tabindex="-1" aria-disabled="true">Dashborad</a>
-                </li>
-            </ul>
+   <nav class="navbar navbar-expand-lg navbar-light" id="color-nav">
+    <div class="d-flex flex-grow-1">
+        <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
+        <a class="navbar-brand d-none d-lg-inline-block" href="#">
+        </a>
+        <a class="navbar-brand-two mx-auto d-lg-none d-inline-block" href="#">
+           <!-- logo here -->
+            <img src="//placehold.it/40?text=LOGO" alt="logo">
+        </a>
+        <div class="w-100 text-right">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-        <ul class="navbar-nav float-right">
+    </div>
+    <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+            <li class="nav-item active">
+                <a href="/dashboard" class="nav-link m-2 menu-item nav-active">Dashboard</a>
+            </li>
             <li class="nav-item">
-                <a class="nav-link" href="/logout" tabindex="-1" aria-disabled="true">LogOut</a>
+                <a href="/fridge/view" class="nav-link m-2 menu-item">View fridge!</a>
+            </li>
+            <li class="nav-item">
+                <a href="/fridge/addItem" class="nav-link m-2 menu-item">Add new item!</a>
+            </li>
+            <li class="nav-item">
+                <a href="/logout" class="nav-link m-2 menu-item">LogOut</a>
             </li>
         </ul>
+    </div>
+</nav>
 
-    </nav>
 
 
     <div class="container">
