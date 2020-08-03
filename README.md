@@ -40,17 +40,16 @@ This project featured several areas which required specific focus:
 * [JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [jquery](https://jquery.com/)
 * [mysql](https://www.mysql.com/)
-* [mysql2 NPM]()
+* [mysql2 NPM](https://www.npmjs.com/package/mysql2)
 * [express](https://expressjs.com/)
 * [express-session](https://www.npmjs.com/package/express-handlebars)
-* [Bootstrap]()
-* [Nodemailer]()
-* [Passport]()
-* [Passport-Local]()
-* [Passport]()
-* [Sequelize]()
-* [Moment]()
-* [Dotenv]()
+* [Bootstrap](https://getbootstrap.com/)
+* [Nodemailer](https://nodemailer.com/about/)
+* [Passport-Local](https://www.npmjs.com/package/passport-local)
+* [Passport](http://www.passportjs.org/)
+* [Sequelize](https://sequelize.org/)
+* [Moment](https://momentjs.com/)
+* [Dotenv](https://www.npmjs.com/package/dotenv)
 
 ## Site
 
@@ -63,11 +62,22 @@ MIT
 Contributors are welcome. Please contact for further details.
 
 ## Questions
-If you have any questions regarding this project, please email 
+If you have any questions regarding this project, please email us. 
 
 ## Authors
+* **SHAMBHAWI  KUMARI** 
+
+- [Link to Github](https://github.com/shambhawi13)
+- [Link to LinkedIn](https://www.linkedin.com/in/shambhawi-kumari/)
 
 * **CHRISTOPHER LEE** 
 
 - [Link to Github](https://github.com/CofChips)
 - [Link to LinkedIn](https://www.linkedin.com/in/christophernlee/)
+
+
+* **SERGIO LOPEZ** 
+
+- [Link to Github](https://github.com/cherjios)
+- [Link to LinkedIn](https://www.linkedin.com/in/sergio-lopez-81790579/)
+
