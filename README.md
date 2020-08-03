@@ -2,12 +2,6 @@
 ## helping you use it, before you lose it
 https://refritrack.herokuapp.com/ | https://git.heroku.com/refritrack.git
 
-"username": "root",
-    "password": "password",
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 ![GitHub repo size](https://img.shields.io/github/repo-size/shambhawi13/Refritrack)
 
