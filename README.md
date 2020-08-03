@@ -10,7 +10,6 @@ Spoiler Alert! is a food inventory and status tracking application. Users can si
 ![Image](./public/assets/img/example.gif)
 
 ## Table of Contents
-* [Background](#background)
 * [Motivation](#motivation)
 * [Design](#design)
 * [Technology](#technology)
@@ -21,20 +20,6 @@ Spoiler Alert! is a food inventory and status tracking application. Users can si
 * [Questions](#questions)
 * [Authors](#authors)
 
-## Background
-Spoiler Alert was created for Project 2 of the UC Berkeley full-time web development coding bootcamp. Requirements for this project are noted below:
-
-```
-* Must use a Node and Express Web Server
-* Must be backed by a MySQL Database with a Sequelize ORM 
-* Must have both GET and POST routes for retrieving and adding new data
-* Must be deployed using Heroku (with Data)
-* Must utilize at least one new library, package, or technology that we haven’t discussed
-* Must have a polished frontend / UI
-* Must have folder structure that meets MVC Paradigm
-* Must meet good quality coding standards (indentation, scoping, naming)
-
-```
 
 ## Motivation
 
@@ -77,6 +62,8 @@ As shown above, users can have many refrigerator items and categories can have m
 * [Dotenv](https://www.npmjs.com/package/dotenv)
 
 ## Code
+Below is how we implemented nodemailer to send automated email alerts to users with food expiring in 2 days:
+![Image](./public/assets/img/code_mailer.jpg)
 
 ## Site
 
